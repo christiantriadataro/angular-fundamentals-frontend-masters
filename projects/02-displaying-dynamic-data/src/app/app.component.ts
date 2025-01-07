@@ -1,42 +1,19 @@
 import { Component } from '@angular/core';
+import {UserInfoComponent} from "../../../11-dependency-injection/src/app/user-info/user-info.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   template: `
-    <article class="offer">
-      <h1>
-        <span>Bonus Offer</span>
-        <span>&dollar;{{ item.price }}</span>
-      </h1>
-      <img src="/assets/noun-product-6277512.png" width="400" />
-      <p>{{  item.name }}</p>
-      <p>{{  item.description }}</p>
-      <button>Order Now</button>
-    </article>
+    <section>
+      <p>Welcome back</p>
+      <app-user-info/>
+    </section>
   `,
-  styles: `
-    .offer {
-      font-family: Verdana;
-      border: solid 1px gray;
-      width: 400px;
-      padding: 20px;
-      border-radius: 3px;
-      color: white;
-      background: #7f6b41;
-    }
-    h1 {
-      display: flex;
-      justify-content: space-between;
-    }
-    button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      border: solid 1px white;
-      border-radius: 3px;
-    }
-  `,
+  styles: ``,
+  imports: [
+    UserInfoComponent
+  ]
 })
 export class AppComponent {
   item = {
