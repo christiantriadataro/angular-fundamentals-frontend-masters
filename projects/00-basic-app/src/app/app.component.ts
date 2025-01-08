@@ -4,18 +4,20 @@ import { Component } from "@angular/core"
   selector: "app-root",
   standalone: true,
   template: `
-    <section>
-      @if (loggedIn) {
-        <p>Please login</p>
-      } @else {
-        <p>Welcome back</p>
-      }
-
-    </section>
+    <button type="button" [disabled]="isDisabled">Save</button>
+    <button (click)="handleClick()">Save</button>
+    <ng-container [userData]="user"></ng-container>
   `,
   styles: ``
 })
 
 export class AppComponent {
-  loggedIn = false;
+  isDisabled = true;
+  handleClick = () => {
+    this.isDisabled = false;
+  }
+  user = {
+    name: "Chan",
+    position: "Dev"
+  }
 }
